@@ -1,0 +1,15 @@
+[Protocol]
+Class=:internet
+exec=kmplayer "%u"
+protocol=rtsp
+input=none
+output=none
+helper=true
+reading=false
+listing=
+writing=false
+makedir=false
+deleting=false
+linking=false
+moving=false
+Icon=kmplayer
