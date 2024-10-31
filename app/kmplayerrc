@@ -1,0 +1,49 @@
+[General Options]
+Show Statusbar=true
+Show Toolbar=true
+
+[KFileDialog Settings]
+
+[KFileDialog Speedbar]
+
+[MPlayer]
+Post MPlayer 0.90=true
+Add Configure Button=true
+Additional Arguments=
+Mencoder Arguments=-oac mp3lame -ovc lavc
+Cache Size for Streaming=128
+DVD Device=/dev/dvd
+Forward/Backward Seek Time=10
+Immediately Play DVD=true
+Keep Size Ratio=true
+Loop=false
+Frame Drop=true
+Add Record Button=true
+Add Broadcast Button=true
+Auto Play After Recording=true
+Show DVD Menu=true
+Video Driver=xv
+
+[Pipe Command]
+Command1=cat ~/example.avi
+
+[MPlayer Output Matching]
+DVD Chapters=There are ([0-9]+) chapters
+DVD Language=ID_AID_([0-9]+)_LANG=([A-Za-z]+)
+DVD Sub Title=ID_SID_([0-9]+)_LANG=([A-Za-z]+)
+DVD Titles=There are ([0-9]+) titles
+Movie Size=VO:.*[^0-9]([0-9]+)x([0-9]+)
+Cache Fill=Cache fill:[^0-9]*([0-9\\.]+)%
+Movie Position=V:\\s*([0-9\\.]+)
+Start Playing=Start[^ ]* play
+VCD Tracks=track ([0-9]+):
+
+[Broadcast]
+Custom Setting=asf;mp3;32;22050;mpeg4;80;10;10;12;320;240;127.0.0.1;10.0.0.0 10.255.255.255;192.168.0.0 192.168.255.255
+Profile_Modem (32k)=asf;mp3;8;11025;mpeg4;50;19;3;3;160;128;27.0.0.1;10.0.0.0 10.255.255.255;192.168.0.0 192.168.255.255
+Profile_ISDN (64k)=asf;mp3;8;11025;mpeg4;50;16;3;3;320;240;127.0.0.1;10.0.0.0 10.255.255.255;192.168.0.0 192.168.255.255
+Profile_ISDN2 (128k)=asf;mp3;32;22050;mpeg4;80;10;10;12;320;240;127.0.0.1;10.0.0.0 10.255.255.255;192.168.0.0 192.168.255.255
+Profile_LAN (1024k)=mpeg;;64;44100;;512;5;25;12;320;240;127.0.0.1;10.0.0.0 10.255.255.255;192.168.0.0 192.168.255.255
+Profiles=Modem (32k);ISDN (64k);ISDN2 (128k);LAN (1024k)
+
+[Recent Files]

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui name="kmplayer" version="30">
+<MenuBar>
+  <Menu name="file"><text>&amp;File</text>
+    <Action name="open"/>
+    <Action name="new_window"/>
+    <Action name="open_recent"/>
+    <Action name="generators"/>
+    <Action name="save_as"/>
+    <Separator />
+    <Action name="clear_history"/>
+    <Separator />
+    <!--Action name="source_pipe"/>
+    <Menu name="vdr"><text>VD&amp;R</text>
+      <Action name="vdr_connect"/>
+      <Action name="vdr_key_up"/>
+      <Action name="vdr_key_down"/>
+      <Action name="vdr_key_back"/>
+      <Action name="vdr_key_ok"/>
+      <Action name="vdr_key_setup"/>
+      <Action name="vdr_key_channels"/>
+      <Action name="vdr_key_menu"/>
+      <Action name="vdr_key_red"/>
+      <Action name="vdr_key_green"/>
+      <Action name="vdr_key_yellow"/>
+      <Action name="vdr_key_blue"/>
+      <Action name="vdr_key_custom"/>
+    </Menu-->
+  </Menu>
+  <Menu name="view"><text>&amp;View</text>
+    <Action name="view_video"/>
+    <Action name="view_playlist"/>
+    <Action name="view_minimal"/>
+    <Action name="view_fullscreen"/>
+    <Action name="view_keep_ratio"/>
+    <Separator />
+    <Action name="play"/>
+    <Action name="pause"/>
+    <Action name="stop"/>
+    <Separator />
+    <Action name="find"/>
+    <Action name="next"/>
+    <Separator />
+    <Action name="edit_mode"/>
+    <Action name="sync_edit_mode"/>
+    <Action name="edit_playlist_item"/>
+    <Separator />
+  </Menu>
+  <Action name="bookmarks"/>
+  <Menu name="settings"><text>&amp;Settings</text>
+    <Separator />
+    <Action name="options_show_menubar"/>
+    <Action name="options_show_toolbar"/>
+    <Action name="options_show_statusbar"/>
+    <Separator />
+    <Action name="options_configure_keybinding"/>
+    <Action name="options_configure_toolbars"/>
+    <Action name="options_configure"/>
+  </Menu>
+</MenuBar>
+<ActionProperties>
+  <Action name="new_window" icon="window-new"/>
+  <Action name="play" icon="media-playback-start"/>
+  <Action name="pause" icon="media-playback-pause"/>
+  <Action name="stop" icon="media-playback-stop"/>
+  <Action name="view_playlist" icon="view-media-playlist"/>
+  <Action name="view_fullscreen" icon="view-fullscreen"/>
+  <Action name="sync_edit_mode" icon="view-refresh"/>
+  <Action shortcut="F" name="view_fullscreen" icon="view-fullscreen"/>
+  <Action shortcut="R" name="play" />
+  <Action shortcut="P" name="pause" />
+  <Action shortcut="S" name="stop" />
+  <Action shortcut="F2" name="edit_playlist_item"/>
+</ActionProperties>
+<ToolBar name="mainToolBar"><text></text>
+  <Action name="new_window"/>
+  <Action name="open"/>
+  <Separator/>
+  <Action name="play"/>
+  <Action name="pause"/>
+  <Action name="stop"/>
+  <Separator/>
+  <Action name="view_fullscreen"/>
+  <Action name="view_zoom_100"/>
+  <Separator/>
+  <Action name="view_video"/>
+  <Action name="view_playlist"/>
+  <Action name="sync_edit_mode"/>
+  <Separator/>
+  <Action name="options_configure"/>
+  <Separator/>
+  <Action name="vdr_key_up"/>
+  <Action name="vdr_key_down"/>
+  <Action name="vdr_key_back"/>
+  <Action name="vdr_key_ok"/>
+  <Action name="vdr_key_menu"/>
+</ToolBar>
+</gui>
