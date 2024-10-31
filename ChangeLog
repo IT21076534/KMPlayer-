@@ -1,0 +1,806 @@
+Changes since version 0.12.0a
+- Fix url links update in config dialog
+- Open file now defaults to Videos or Music user directory
+- Fix gcc-6 warnings about export mismatch
+- Support QT_SCREEN_SCALE_FACTORS for HiPDI
+Changes since version 0.12.0
+- Fix drag&drop into playlist on an item
+- Get rid of more KDE4 support classes
+- Fix huge text in SMIL animations on HiDPI displays
+- Fix build, don't include kstdaction.h and ksimpleconfig.h KDE4 headers
+- Merge changes for 0.11.5b
+Changes since version 0.11.5b
+- Port to kde5
+Changes since version 0.11.5a
+- Add media:group summary for RSS in more cases
+- Kill some build warnings
+- Fix XPath expression sub-sequence stuck in endless loop
+- Don't show delete item and create bookmark for top playlist items
+Changes since version 0.11.5
+- Crash fix when okaying the configuration dialog
+- Unpausing fix jumping to first item in list
+- Compile fixes
+Changes since version 0.11.4
+- Rewrite big part of expression support
+- Support animated SVG as far supported in Qt
+- Crash fix in RealPix for img when img not found
+- Crash fix in playlist DnD
+Changes since version 0.11.3d
+- Port away from Qt3 support
+- Fix crash in playlist context menup move up/down
+- Fix possible XWindow leak when using MPlayer
+- Hardcode to shockwave flash for application/vnd.adobe.flash.movie mime
+Changes since version 0.11.3c
+- Fix item activation in double click mode
+- Fix crash on plugin exit in MediaManager destructor
+- Fix GtkWindow destroyed for never libflashplugin
+Changes since version 0.11.3b
+- Include build fixes from Orcan Ogetbil
+- Set codec to utf8 when reading our own lists
+- Fix initial video sizes with SMIL+video
+Changes since version 0.11.3a
+- TV list wasn't saved when editing the items in-place
+- Percentage of stream loading in status bar wasn't cleared on playing
+- Basic support for Outline Processor Markup Language
+- Some SMIL synchronization fixes
+Changes since version 0.11.3
+- Fix crash when NPP player window resizes
+- Don't log in NPP output in /tmp/npp.out
+- Remove configure toolbar menu item
+Changes since version 0.11.2c
+- SMIL-3.0 improvements for smilText and State
+- Remove pango dependency
+- KDE3 porting; replace K3ListView with QTreeView
+Changes since version 0.11.2b
+- Don't show local files with file://, nor percent encoded in recent list
+- Fix replaying a .pls file
+- Fix playlist.xml file can contain trailing XNL fragments when it gets smaller
+- Fix crash when SmilText has no text
+- Reenable item renaming in the playlist
+Changes since version 0.11.2a
+- Fix npp destroy stream
+- Synchronously start npp from kpart to handle immediate JS version calls
+- Fix pause for list items
+- Fix adding empty arguments to generated JS functions
+- Mimetype detection fix when first arrived data is too small to call
+- SMIL 'img' is now an alias to 'ref'
+- The mplayer detected DVD titles are selectable again, now as child items
+- Fix filename encoding for local files
+- Fix crash after running the youtube generator
+Changes since version 0.11.2
+- Add 'escape-uri' and 'contains' expression functions, support for '.' node
+- Fix slider hiding when mplayer starts and no length available
+- TV device scanner fix, recognize v4l2 inputs and fix detection when done
+- Fix opening multiple files on commandline
+- smilText improvements, support transition and background attributes
+- Fix load-on-demand icon not shown for plugin
+- SMIL support for paramGroup and mediaAlign attributes
+Changes since version 0.11.1b
+- Add pulse and vpau output drivers for MPlayer
+- Fix audio language and sub title selection for MPlayer
+- Port all K3Process to use QProcess
+- Update npp to xulrunner-1.9
+- Begin of SMIL state support, limited implementation of XPath
+Changes since version 0.11.1a
+- Hopefully fix crash reported in bugs.kde.org:195464
+- Implement animateColor
+- Don't set plugins background color (bugs.kde.org:161282)
+- Fix animation timer not killed
+- Update hardcoded flash version to 10.0r22
+- Fix audio previews with flash on www.7digital.de (bugs.kde.org:193843)
+- Fix slider for scaling the video
+Changes since version 0.11.1
+- Add title to blip.tv information page
+- Enable more text attributes for smilText
+- Fix resizing generators information page making text area smaller
+- Fix title on youtube information page started with a newline
+Changes since version 0.11.0a
+- Merged generators from Maemo port
+- Enable clear history
+- Also a summary if RSS has media tags
+- Implement still missing tvscanner using it (FWIW)
+- Support SMIL region backgroundOpacity and media type mediaBackgroundOpacity
+- Save toolbar settings
+- Don't set aspects for NPP
+- Support 'fill="transition"` inside SMIL 'seq' tags
+- Support more than one begin and end triggers for SMIL elements
+- Fix playing paths having spaces
+Changes since version 0.11.0
+- Implement NPNPostUrl, fixes some not working flash cases
+- Set correct version in about dialog
+- Delay completed signal with npp until first stream is finished
+- Disable powermanager when we watch a film
+- Add dbus interface for part, inluding org.kdeKMediaPlayer
+- Fix for eof doesn't exit fullscreen
+- Fix pressing play button doing nothing when there are child links
+- Fix MPlayer often inserting the same link
+Changes since version 0.11.0-rc4
+- Extend Atom feed for Youtube queries
+- Fix crash with npp if we get a javascript call before the plugin is loaded
+- Report npp plugin loading failure
+- Fix crash with D&D in playlist
+Changes since version 0.11.0-rc3
+- Silence most of the QDBus warnings about missing members or spurious replies
+- Fix crash in npplayer for the GetVariable call from Javascript
+- Bookmark updates from Edgar Klingberg
+- Commented out lots of not (yet) implemented or empty menu's
+- Phonon stream information is now shown
+- Fix leaking XPixmap's in the back buffer code
+Changes since version 0.11.0-rc2
+- Change LoadOnDemand icon to default KDE's video icon
+- Begin of support for SMIL::PriorityClass
+- Fix controlpanel leaking menu's
+- Support for simple calls to the npp plugin, onces that don't pass or return
+  object, such as flash' GotoFrame
+- Replace cairo_push_group by using XPixmap instead
+- Save half of the dbus calls with npp's NPRuntime
+Changes since version 0.11.0-rc1
+- Fix browser function 'evalutate' in npp
+- Make forward/backward buttons work again
+- Add default region to smil layout, fixes some audio only cases
+- Simple 'target' attribute support for smil a/area elements for plugin
+- Hide controlpanel in khtml by default
+- Skip OnDemand plugin loading if we expect too little space to click on
+- Make collaboratiog kparts work again
+Changes since version 0.10.0c
+- Never start playing directly if we detected a HREF attribute
+- Rename option 'Click to Play' to 'Grab image when 'Click to Play' is detected
+- Add option for load on demand for when embedded in khtml
+- Remove xine and gstreamer, add phonon backend
+- Port to KDE4
+- Support for simultaneous audio/video streams with SMIL
+Changes since version 0.10.0b
+- Use html page baseurl for resolving urls from the knpplayer backend
+- Initialize thread support for knpplayer, makes knpplayer crashes go away
+- Second part of set viewarea background to part's parent background
+Changes since version 0.10.0a
+- Fix some flash wanting full Url out of a relative Url before streaming data
+- Hardcode flash mimetypes in pluginsinfo
+- Fix kpart not reading the system global kmplayerrc
+- Set viewarea background to part's parent background for the plugin
+- Fix kxineplayer crash when sending the configurations
+Changes since version 0.10.0
+- Fix npp streams with javascript urls, that never reached the finish state
+- Fix memory leak in SMIL image
+- Get rid of nspr dependency
+Changes since version 0.10.0-pre3
+- Fix double scaling of video in a region
+- Use XPLAIN again for npp's GtkPlug embedded in QXEmbed, makes reproducable
+  mouse grab go away
+Changes since version 0.10.0-pre2
+- Fix unpausing with multi items from playlist
+- Compile fix for gcc >= 4.2
+- Cairo painting speedups, always round to screen pixel values
+- Adjust for timer drifting in SMIL files
+- SMIL additions, add AnimateMotion, more transition types, transOut support,
+  region background image and 'showBackground' attribute among others
+- Replace -vop with -vf for MPlayer
+Changes since version 0.9.4a
+- Allow per mimetype preferred player backend
+- Add npp backend that plays xembed style browser plugins
+Changes since version 0.9.4
+- Crash fix in playlist change while still playing
+- Support for mouse events on 'area' elements in SMIL
+- Clear the 'Connecting' status message when we got the data
+- Fix regression in 0.9.4, xine added reference links weren't auto played
+- Fix painting gifs that where larger than qmovie default buffer size
+- Support SMIL 'fillDefault' attribute
+- Globally share XML attribute names, reducing memory pressure
+- Fix region painting regression to limit updating only the region rectangle
+- Add audio/x-ms* to list of possible playlists
+Changes since version 0.9.3a
+- Support for MPlayer ICY stream info
+- Fix flashing/resizing infowindow between two items having info
+- Podcast item w/o an enclose but having a description now keep them self
+  active for a calculated time
+- Fix easy breaking reading CDATA sections
+- Changed intro animation, making it slightly shorter and using fade transition
+- Add support for SMIL linknodes a and area, brush and transiton (only fade)
+- RealPix's fades now realy fades in or out
+- Moved SMIL/RealPix painting to libcairo
+- Fix auto hiding controlpanel disappeared after switching to console view
+- Fix autohiding controlpanel when there is also a statusbar
+Changes since version 0.9.3
+- Reading RAM playlists should stop on '--stop--' stop lines
+- Make playlist occuring on top less likely
+- Support for 'repeatCount="indefinite"' in SMIL
+- Fix uninitialized member in GenericMrl, eg. reopening saved playlist crashed
+- "quot" entity fix in XML parser
+- Also show content of cdata sections in infoview w/ RSS and XSPF
+- Fix konqueror wheel spinning when HTML object has an 'autostart=0' set
+- Fix possible hang in RemoteObject for SMIL or RealPix
+- Don't play exit animation when KDE terminates
+- Nested playlist fix for RSS and XSPF
+- Item 'Playlist', of panel's popup menu, didn't work in fullscreen/minimal view
+- Allow Xine as player for TV using v4l:/Tuner/frequency mrls
+Changes since version 0.9.3-rc1
+- Fix audio/video CD w/ MPlayer adding more and more nodes on restart
+- MPlayer movie length detection fix for URLs in lists
+- Fix playlistview accessing root node w/o checking (crash fix)
+- XML Shareable Playlist Format (aka spiff) support
+- Fixed editing in place tree of URL, they were modified by KURL::prettyURL()
+- Fixed missing 'NotRunning' state change notification in some cases
+- Window title for playlists fix, either group name or item URL
+- Catergory items should not be editable
+Changes since version 0.9.3-pre2
+- Patch from bero, add more output audio and video drivers
+- Frequencies for Xv TV watching should now be in MHz (like with MPlayer)
+- Add more help in the handbook about the backends and the playlist format
+- Support MPLAYEROPTS argument for group/item nodes to add extra settings
+- Add option to set path/application name for mplayer backend
+- Fix possible crash when updating the playlist tree from QListView click events
+- Add 'Delete item' and MoveUp/Down for persistent playlists context menu and TV
+- Delay loading of recent XML file to first item played or category opened
+- Defaults to not show progress slider instead of having a disabled slider,
+  this greatly improves channel switching with Xv and the bttv driver
+- Properly stop kmplayer when 'hanging' in the resolving state, also add
+  'Connecting' when starting resolving
+Changes since version 0.9.3-pre1
+- Support for audio cdrom
+- Fixes for 'Persistent Playlists' tree; drop position didn't account for
+  scrollbar position, painting fixes, popup menu position and dropping an item
+  in a not-yet-loaded tree created a temporary ghost tree
+Changes since version 0.9.2a
+- Painting of root items in playlist view as 'Window Background'
+- Add a 'Persistent Playlists' sub tree to playlist view, editing by D&D,
+  in-place node editing or changing the XML directly using the 'Edit Mode'
+- Add a 'Most Recent' sub tree to playlist view, when having more than 10
+  items, automatic create a sub tree 'More ..'
+- Merge TV input and device name to make tree one step less deep
+- Add Television as persistent sub tree to playlist view
+- Add 'Optical Disks' with VCD/DVD as persistent sub tree to playlist view
+- Make playlist tree less deep and remove the branches paintings
+- Plugin fix for http://www.orbital.pt/ for Konqueror >= 3.5.4 users
+Changes since version 0.9.2
+- Fix realvideo on tagesschau.de, support control lists as well
+- Toolbar can now be changed using KDE's default KEditToolbar dialog
+- Support 'ref' media tags and 'meta' head tags for Smil
+- TV source channel switching using Xv player now lowers volume for a short time
+- Fix passing playlist files at the commandline, were directly fed to backends
+- Fix ASX in case entries point to other playlist files, these weren't resolved
+- With plugin, undo infowindow or controlpanel only view if video output
+  is detected (basically undo (mis)detection which controls to show)
+- Fix set Edit mode window to plain text, it interpretered HTML tags
+Changes since version 0.9.2-rc1
+- Added a DCOP call 'isPlaying()' that returns true when backend is running
+  and a DCOP call 'isPlaying()' on the backends, other than MPlayer, that
+  returns true when not paused
+- Fix having to press 'pause' twice for unpause and pausing not working with
+  playlists (likely regression since 0.9.2-pre1)
+- Compile fix for when not using Xine (regression in 0.9.2-rc1)
+- Crash fix when restarting certain SMIL files, eg when having an RealPix img
+Changes since version 0.9.2-pre3
+- Recorder added using Xine's mrl setup (see xine-ui-ver/doc/README.en.15.MRLs)
+- Seeking support for gstreamer backend
+- Ported gstreamer backend from 0.8 to 0.10
+- Fix length parsing for MPlayer current CVS version (by Jonas Hurrelmann)
+Changes since version 0.9.2-pre2
+- Update with 0.9.1c
+- SMIL files can be part of other SMIL files
+- y-coordinate fix for images in RealPix
+Changes since version 0.9.2-pre1
+- Update with 0.9.1b
+- Added RealPix support for SMIL animations
+Changes since version 0.9.1c
+- Option added to disable color setting on movie start
+- Simple playlist edit mode, edit (sub)tree in raw XML
+- SMIL animations can be paused now
+Changes since version 0.9.1b
+- WMP's showdisplay object argument interpretation fix, it's about clip info
+- Fix current playlist item not visual selected and plugin's playlist not
+  showing HTML object's arguments (regression in 0.9.1b compared to 0.9.1a)
+- Fix KHTML setting palette on controlpanel, buttons weren't updated
+- Double click on video widget for Xine/Gst/Xv or background toggles fullscreen
+Changes since version 0.9.1a
+- WMP plugin fix for not showing video widget when 'controls' is 
+  specified
+- Fix for audio only plugin group for real
+- Fix media:// url's
+- Crash fix for SMIL when resolving multible url's simultaneously
+- Don't play exit animation if started with an url
+- Fix for plugin w/ floating statusbar,wrong parent was set
+- Real plugin fix for 'controls=All', shouldn't show video widget
+- Support for uimode/nolabels/nocontrols/showdisplay/showcontrols/showstatusbar
+  attributes for WMP's embedded object emulation
+- Autohide controlpanel w/ 'Click to play' and support for TARGET attribute
+  for QT embedded object emulation
+Changes since version 0.9.1
+- Fix that switching channels w/ VDR sometimes stopped the backend
+- Fix saving playlist looses cdata sections (if any) and don't normalize them
+- Fix application window stays hidden when fullscreen window closed with ALT_F4
+- Fix parser closing root's parent object when reading a XML file in an
+  existing playlist (ie. a playlist item points to a broken XML playlist file)
+- Fix small chance of crashing by the intro movie when choosing another
+  source very fast (eg. when having, and using, a shortcut for VDR directly)
+- Remove hardcode Esc shortcut to escape fullscreen mode, it clashes with
+  canceling playlist editing
+- Workaround bug in KListView when clearing the playlist while it's editing
+  an item, by clearing Focus on any child widget. Also move focus back to
+  ViewArea when an item is executed
+Changes since version 0.9.1-rc1
+- Added Find/FindNext in playlist's context menu
+- Intro-movie's background will finish when clicked on its background
+- Fix possible crash w/ plugin if javascript did a 'put' on an unknown property
+- Support reading playlist files from media:// or remote:// protocols, movie
+  files that resolve to these, still doesn't work though
+- Support SMIL's 'begin' attribute on group tags (seq/par/excl) as well
+- Fix not honouring MPlayer's aspects detection in case it's not width:height
+- Fix MPlayer with the X11Shm video driver not scaling correctly when
+  'keep aspects' is set
+- Fix Xine not resuming on 'pause' when pressing the 'pause' button again
+- Fix to not let the session manager restore a backend application as well
+- Support for CONTROLS="StatusBar" for plugin, having the same statusbar
+  as application. See tests/controls.html, after installing KMPlayer-plugin,
+  with konqueror (also used on many sites when choosing for real format)
+Changes since version 0.9.1-pre3
+- Show backend's status in application's statusbar and show the play time
+  left as well.
+- Add OBJECT's attributes coming from khtml to the document of urlsource, that
+  might be helpful for web developers (using the 'Show all' feature of playlist)
+- Add KAction for showing the control or language popup menu
+- Put colors and font settings on a separate tab, reducing total config
+  dialog dimensions
+- Fix restoring playlist causing flashing on screen after intro animation
+- Also remember window location for window->minimal mode->window
+- Integrate MPlayer's languague/subtitles menus for DVD with new languague
+  popup menu and seek to current position when changing languague/subtitles
+  with MPlayer
+- Support for audio/subtitles within a stream. A language button will be added
+  when detected which has submenus for the languages. GStreamer only subtitles
+  with an external url ATM.
+Changes since version 0.9.1-pre2
+- Support for CONTROLS="Playlist" for plugin
+- Support for <base HREF='...'/> tags for ASX
+- Network bandwidth setting added, this is used in SMIL's <switch> element
+  when <video> or <audio> elements have a system-bitrate attribute
+- Unpushing the playbutton now actually stops playing
+- Fix kxineplayer crashing on exit due to double deletion
+- Keep playlist entry in popupmenu, controlpanel button might be gone
+- Remember window location so window->fullscreen->window is at same place again
+- Option to not resize on opening new source added
+- Fix ASX Entry's having more than one Ref child nodes, current wasn't set
+  right in playlist (did play though)
+Changes since version 0.9.1-pre1
+- Playlist button of controlpanel has no use when in fullscreen or minimal
+  mode, so reuse if for a back-to-normal-window button
+- Fixed bug in plugin, 0.9.1-pre1 only, that messed up all attributes passed
+  to KMPlayer from KHTML and likely breaking lots of webpages having
+  audio/video and also omitting KMPlayer's checks for local access.
+- Shorten intro/exit animations and also animate the icon rise and fall
+- SMIL's regPoint/regAlign support
+- Don't resize kpart if 'intrinsic' size is 0x0
+- Don't resize for intro/exit animations
+- XML export, or regenerate in case of XML playlist, of loaded playlist.
+- Fix possible crash when changing source from the TV source to another one.
+Changes since version 0.9.0c
+- Font settings for playlist and infowindow added.
+- Color settings for infowindow added.
+- Added some docu about intro/exit movies and kmplayer:// urls in handbook.
+- Added minimal mode option that hides playlist, status- and menubar and
+  autohides the controlpanel.
+- Moved playlist option from popupmenu to controlpanel and a configure option
+  whether to show this button
+Changes since version 0.9.0b
+- Fix 1+ movies become black&white with Xine backend playing the playlist
+- Fix the 'Remember window size on exit' setting and make the 'Always start
+  with fixed size' setting use the last remembered size.
+- Fix XML parser if two or more entities follow each other and block a
+  possible stack overflow
+- Check for local file access on playlist items too
+- Hide more XML nodes in playlist if they don't have a title
+- Fix displaying jpeg pictures in SMIL's <img> elements
+- Make sure to reset view after playing
+- Add js binding to DoPlayPause for real plugin
+- Try to restore playlist to previous position
+- Fix creating default region in SMIL (if no <layout> is found)
+- Show inner text in infowindow if clicked on an element that isn't a mrl
+- Support for Atom type podcast playlists, plays <link rel="enclosure" src=../>
+- Add a scale slider to popup menu when in fullscreen. This is particular
+  useful if watching a 4:3 movie on a widescreen display.
+- Allow for custom intro/exit movies when exists {intro,exit}.xml in either
+  $KDEDIR/share/apps/kmplayer/ or an user's .kde/share/apps/kmplayer/
+Changes since version 0.9.0a
+- Removed decoration (+ and - for tree) from root item in playlist, saving
+  16px horizontal. Also set icon for this item to an url.
+- Removed extra text/html mimetype check for playlist detection. Seems some
+  sites use this mimetype for ASX too.
+- Fixed random navigating in ASX playlists.
+- Don't show a folder icon when playlist item has no childeren and isn't a
+  multi-media link either.
+- Make playlist menu/toolbar item a toggle for show and hide.
+- Combine console/video toolbar buttons and menu items as one toggle and get
+  rid of 'View' submenu in popup menu. Fill gap on toolbar with zoom100%
+- Clear history didn't clear 'Recent files' permanently.
+Changes since version 0.9.0
+- Fixed last minute change that broke almost all Podcast RSS support
+Changes since version 0.9.0-rc1
+- Fix the broken recording from rc1 and possible some pre's too
+- start and end with a simple smil document if started with no url.
+  Can be turned off in rc file with option "No Intro=1" in section 
+  "[General Options]".
+- support Podcast rss urls, list chanel/item/enclosure tags and play url
+  arguments of enclosure elements and display inner text from description
+  in info window
+- Added an info panel that is now implemented as a dockable view, this should
+  become the infopanel for Real plugin's CONTROLS attribute possibility. Put
+  messages from Xine backend in this window.
+Changes since version 0.9.0-pre4
+- In place renaming of TV channel/input names in playlist
+- Added help sections for TV and VDR in handbook.
+- TV settings are now stored in ~/.kde/share/apps/kmplayer/tv.xml. There is an
+  automatic conversion. Should make manual changes more easy, see handbook for
+  the format. Now also XVideo port and encoding can be configured, although
+  manually only.
+- More work on SMIL. Allow playing mediatype elements w/o having a region
+  assigned, fixes audio only streams (eg. with the <audio> tag).
+- Optionally use the expat SAX parser (instead of kmplayer's own one) when
+  configured with --enable-expat. Note, the expat parser is more strict and
+  therefor can misread some ASX files.
+Changes since version 0.9.0-pre3
+- Fix for DVD submenus for MPlayer and update regexp for audio/subtitle
+  languages
+- More work on SMIL. Show active SMIL element in playlist using the color
+  settings. Like mediatypes, if set/animate elements have a duration than it
+  should not deactivate itself immediately.
+- Undo 'First jump to URL source page when opening an URL' from 0.8.1. Now the
+  'Configure KMPlayer' option jumps to that page. File open, opens a file
+  dialog again (and can select multible files)
+- Allow opening multible files
+- Support for gif movies in SMIL's 'img' element
+- Regression fix plugin; when split over multible objects, the base url could
+  be opened instead of the SRC url.
+Changes since version 0.9.0-pre2
+- Support javascript properties FileName and Volume
+- Internal redesign of DOM classes
+- Store current url in KDE's session config
+- Added a 'Clear History' action, that will clear recent files and URL source
+  history
+- Delayed mouse hiding in fullscreen, patch from Ben Laenen
+- Option for docking in system tray
+- Smarter painting when moving regions in SMIL document
+- More work on SMIL support. Implemented animate's 'values' attribute and
+  'calcMode="discrete"'. Added 'fit' attribute for mediatypes (only used
+  for images now, and value 'scroll' is not implemented). Group
+  'excl' is now supported. Text elements are rendered by QTextEdit, so it
+  supports html now too. Updated applications in tests/ directory
+Changes since version 0.9.0-pre1
+- Include tests directory
+Changes since version 0.8.4b
+- Build fix for compiling with -fvisibility=hidden
+- More work on SMIL, support for layout/root-layout/region tags so one can
+  position a mediatype in a rectangle, other than video/audio also support
+  for text/img mediatypes and flow control with begin/dur/end attribute that
+  can be time values but also (mouse) events or clip ends and set/animate can
+  be used to alter arguments on-the-fly.
+- Added option to adjust the colors of playlist and viewing area
+- Added an option in playlist context menu to show all nodes in case of XML
+  based playlists (ASX or SMIL)
+- Added option whether backends should set volume on start
+- Original gcc-2.95 compile fixes (Leo Savernik)
+Changes since version 0.8.4a
+- gcc-2.95 compile fixes (Leo Savernik) hopefully correctly backported
+- Read playlist from audio/m3u mimetypes
+- Don't print log to stdout but to stderr instead (BR100422)
+- Don't set volume on starting MPlayer because MPlayer sets volume relative
+  to current volume (BR99953)
+Changes since version 0.8.4
+- Fix keyboard shortcuts for increase/decrease volume for fullscreen
+- Better 100% zoom calculation
+- Prevents ways to crash KMPlayer via DCOP when just started
+- Fix MPlayer's command queue after manually stop a movie
+Changes since version 0.8.4-rc5
+- Debian builds now a kmplayer-i18n package too
+- Controlpanel uses paletteForegroundColor for drawing
+- Added a volume control to controlpanel that let backends control the volume
+  (unlike the slider in menu, which uses kmix) + two actions for shortcut
+  possibility in 'Configure Shortcuts' dialog
+- Bookmarking a VDR channel now bookmarks it as kmplayer://vdrsource/channel
+- When controlpanel is in autohide mode, move it over the video instead of
+  shifting the video up causing annoying flickering (bug 96861)
+- up/down/ok/back/menu for VDR are added to the toolbar as well when connected
+- Unmute DVB card when VDR reports volume of zero, restore on exit
+- Auto scroll playlist when current is outside the viewing area
+Changes since version 0.8.4-rc4
+- Recording now stops movie playing after hitting 'Start Recording'
+- Be less strict with parsing ASX (and SMIL) play list files
+- Internals: merge code from backends, with the 'never reaching' goal to add
+  a new backend just by configuration (plus a backend player of course)
+- Internals: move playlist handling to Partbase, instead of each process have
+  their own tricks. Also kxineplayer accepts '-vo x11' now, kgstreamer eats
+  local url's w/o file:// prefix.
+- Internals: re-implement backend XML config and TV config data using own
+  DOM-like classes for no less reason than increasing the code coolness :-)
+- Added view video/playlist/console to toolbar
+- Playlist will default appear on top if there are only a few items
+- TV inputs/channels are now displayed inside the playlist, instead of a menu
+- kxvplayer also accounts for frequency setting when guessing the xvideo port,
+  more usable for TV viewing
+- Move all library classes to the KMPlayer namespace and strip the KMPlayer
+  prefix in the name. Rename class KMPlayer itself to PartBase.
+- Binary data detection when reading a playlist that turns out to be
+  video/audio stream (instead of creating a playlist w/ wierd names)
+Changes since version 0.8.4-rc3
+- Look for title entries in ASX and .pls files for playlist items
+- DemiBold font for playlist and console log window for readability
+- Begin of GStreamer backend support, local file only
+- Allow disconnect/connect for VDR while still playing, allows other apps to 
+  access the VDR port
+- Actively determine mime-type for playlist detection (was guess on extension
+  or use the one the plugin got from konqueror)
+- VCD tracks are, for MPlayer only, displayed in playlist and not in menu
+- Added custom command for VDR, output to console view
+- Made command interaction with VDR much more reliable
+Changes since version 0.8.4-rc2
+- Added a XVideo player (kxvplayer) process. Used now for viewing VDR
+- Fixed various crash cases with the playlist
+- Playlist view is dockable now
+Changes since version 0.8.4-rc1
+- Oops, left an ugly hack in the icon loading for the playlist tree, can crash
+  konqueror.
+- Some playlist tree visualization ordering fixes
+Changes since version 0.8.3a
+- Nice icons from Marcel Dierkes, thanks!!!
+- Replaced internal playlist structure from std::list to DOM
+- Removed the 'Show Console' option, now one can always switch to the console
+  output window
+- Visualization of internal playlist, becomes one of the
+  video/playlist/console views of the data
+- More icons in the menus and some context menus added
+Changes since version 0.8.3
+- Auto hiding in fullscreen fix
+- Mencoder recording fix for URLs
+- Yet another spurious seek locking Xine when playing a playlist
+- Comment out NoExpose debug line with kxineplayer
+Changes since version 0.8.3-rc5
+- Two more regression fixes in show cache progress, get rid of spurious seek
+  command caused by switching progress slider usage and don't update playing
+  position if there is no position change (might fill cache instead).
+- Xinerama fix, fullscreen on display where video widget is on.
+Changes since version 0.8.3-rc4
+- Fix regression in show cache progress in 0.8.3-rc2, which made the xine
+  backend hang on some web movies
+- Ripped out the arts volume slider. Now you only get a volume slider if you
+  run kmix standalone or as an applet in kicker.
+- Try to limit symbols in the shared objects by using KDE_NO_EXPORT. Although
+  hard to measure, hopefully speed up loading the plugin
+- New recorder (mplayer -dumpstream) from Stefan Siegel
+Changes since version 0.8.3-rc3a
+- Downloading of .m3u/.pls also eats .asx, so try to read this one too. This
+  fixes also MPlayer-1.0pre not been able to read .asx files.
+- Make sure if we're downloading a playlist file, it isn't bigger than 50k
+- More or less revert the alsa5/alsa9 change to just alsa. Seems latest
+  MPlayer doesn't work with alsa5/alsa9. Although they are still available.
+Changes since version 0.8.3-rc3
+- add AM_MAINTAINER_MODE in configure.in.in, no recheck/automake/autoconf
+  version mismatch
+Changes since version 0.8.3-rc2
+- All QtoolTips to QWhatsThis and help from Xine for whatsthis by xine options
+- Store xine settings in ~/.kde/share/apps/kmplayer/xine_config and not in
+  ~/.xine/config2. Save the first time if file does not exist (Automatically
+  sets the misc.memcpy_method).
+- Added a debian build directory, builds a kmplayer-lib, kmplayer-plugin and a
+  kmplayer-app package. Eg. install only kmplayer-lib and kmplayer-plugin if 
+  you prefer another player but do want the plugin for konqueror.
+- Added protocol files for mms://, rtsp:// and pnm://
+- Position slider now also shows progress of the cache fill
+Changes since version 0.8.3-rc1
+- Remove configure options for control buttons. Simply always autohide for
+  fullscreen and embedded part and show them otherwise
+- Fix another case of video widget stays black cause in kxineplayer
+- If position slider is hidden, make buttons small again (like <= 0.8.2)
+- Support for AUTOSTART attribute
+- Support for FULLSCREENMODE attribute
+- Seeking while sliding :-)
+- Local .pls and .m3u playlist files support. Works too if autodownloaded, eg
+  pls' on http://www.shoutcast.com should work now
+Changes since version 0.8.2
+- fix for the "video window stays (sometimes/often) black" bug, which seems to
+  occur more with the latest Qt versions. KMPlayer uses a XSimpleWindow now
+  that is managed by QXEmbed
+- Support for Real's CONTROLS/CONSOLE attributes. This makes it possible
+  multible plugins cooperate with imagewindow/controlpanel
+- Combine control buttons and position slider to one control panel
+Changes since version 0.8.2-rc5
+- Don't show ffserver setting when no v4l devices are configured
+- Stream detection fix for MPlayer-1.0prex (needed for recording)
+Changes since version 0.8.2-rc4
+- Locale fixes for Xine
+- Let Xine play all URLs in playlist
+- Change alsa to alsa5/alsa9 audio driver for MPlayer
+Changes since version 0.8.2-rc3
+- Compile fix for Qt-3.1
+- Compile fix for xine-lib-1-rc2
+Changes since version 0.8.2-rc2
+- Add audio/x-pn-realaudio to supported mimetypes
+- Fix for filenames containing a #
+- Build fix for KDE-3.1.x
+- Add audio.visualization property for Xine (very nice for eg. web radio)
+Changes since version 0.8.2-rc1
+- Don't fill X log with ffmpeg output
+- Jump to broadcast config page first when clicking broadcast button
+- 'Start' button on broadcast config page and two leds for ffserver and ffmpeg
+- dvd/vcd fix (regression from '-frames 0' removal
+- put mplayer's output patterns in a QTable 
+- default to asf for ffserver
+Changes since version 0.8.1a
+- MPlayer-1.0-pre is default now ([MPlayer] Post MPlayer 0.90=true in
+  kmplayerrc)
+- Removed the '-frames 0' switch for MPlayer-1.0-pre, now identifying is done
+  in one stroke with playback (faster playing, less sensible to failures)
+- Xine configuration tab for convenient editing of ~/.xine/config2
+- Made config dialog somewhat flexible, and TV/broadcast settings are now
+  not available when launched from the plugin
+- Change dir of mplayer/kxineplayer process if playing a local file. Hopefully
+  fixes relative links in supported playlist files.
+- Profiles for broadcasting
+- Fixed always having a left/right black border with Xine
+- Sub title support (although MPlayer-1.0-pre3 crashes with '-sub' option)
+Changes since version 0.8.1
+- Fix for Web object having HREF attributes and not 'Click to Play' enabled
+- Allow opening 'vcd://' and 'dvd://' URLs (useful for Xine VCD Nav)
+- Pass vcd/dvd device setting to kxineplayer
+Changes since version 0.8.1-rc1
+- Delay arts volume initialization for faster startup when not build with
+  --disable-arts-volume
+- First jump to URL source page when opening an URL
+- Added history combo for URL on URL source page
+- Replaced tree for icons with tabs in settings dialog
+Changes since version 0.8b
+- First jump to recording page when pressing the record button
+- Optionally use ffmpeg for recording (URL or v4l sources)
+- Fix mplayer v4l device scanning for mplayer > 0.91
+- Bookmarks added
+- Beginning of more configurable mencoder options
+- Fix signaling of backend player play (regression from 0.8b)
+Changes since version 0.8a
+- Layout fixes in configuration dialog
+- Fix loading percentage feedback
+- Fix console output for kxineplayer
+- Fix tv channel switching
+Changes since version 0.8
+- Fix forward/backward/position seek for mplayer and implemented for kxineplayer
+- Hide zoom sub menu when in fullscreen
+Changes since version 0.7.97
+- Locale fix for filenames
+- Added audio/x-ms-wma mimetype
+Changes since version 0.7.96
+- Build changes, kdeinit wasn't used (speeds up loading) and an option for
+  disabling arts volume slider (eg. if you use kmix already)
+  use --disable-arts-volume with configure and it prevents linking agains the 
+  arts libs (speeds up loading of kmplayer too)
+- Moved color sliders to a sub menu, fix it for mplayer
+Changes since version 0.7.95
+- Support for mplayer/mencoder from CVS. Set 'Post MPlayer 0.90=true' in 
+  .kde/share/config/kmplayer.rc under group [MPlayer] to use it.
+- Also enable DVD playing using kxineplayer (dvdnav, yeah!)
+Changes since version 0.7.4c
+- Added a simple Xine player backend (kxineplayer). Basically a finger practice
+  for the upcoming MPlayer-G2 lib, but now quite useful for rtsp/real playback.
+  Works only for URLs
+- Added the javascript bindings to mimic a realplay plugin (only some are
+  really doing something). You must set KMPlayer as default viewer for
+  audio/x-pn-realaudio to use it.
+- Support for 'Click to play' start images as found on
+  http://www.apple.com/switch/ads/
+- Broadcast, http streaming, for video devices (needs ffmpeg/ffserver)
+  "Say hi to a friend", if you have a webcam.
+Changes since version 0.7.4b
+- Fix postprocessing checkbox
+- Fix proxy setting for mplayer process
+Changes since version 0.7.4a
+- Height calculation fix when position slider is visible
+- Q&D fix for mplayer compiled with locale output (,->. for aspect)
+- Aspect fix for fullscreen when embedded in khtml
+- Position slider fix VCD, re-determine length for each track
+Changes since version 0.7.4
+- Fix VCD playing
+Changes since version 0.7.3
+- Re-added the main application toolbar
+- Re-identify dvd if another title is selected, because they have different
+  chapters/subtitles/languagues/length
+- Added a record button. Currently only configurable in kmplayerrc, see the
+  mencoder options in mplayer man page. Doesn't work for audio only streams.
+- New config dialog from Joonas Koivunen
+- Support for MPlayer's experimental TV capturing (use with care, I need to 
+  rmmod bttv, tvaudio and msp3400 to get xawtv working again afterwards)
+  No audio capturing for now
+- Added a position slider
+- Fixed two cases of double deletes found by valgrind
+Changes since version 0.7.2
+- Make using of arts optional, now that the volume slider automatic starts
+  artsd
+- Patch from Rainer Blessing; show/hide menubar. Enhanced it a bit for
+  people, like me, who forget how to get it back again.
+Changes since version 0.7.1
+- Check for an onFinished handler before emiting it
+- Great patch from Joonas Koivunen, add postprocessing filter configuration
+Changes since version 0.7a
+- Added a 'Open Pipe' item to 'Source' menu for mplayer reading from stdin.
+  Of course slave commands doesn't work here (forward/backward/pause/...)
+  And I had some hard time killing mplayer this way (make 'stop' work).
+  Not available for the embedded part.
+- Add tearoff handle to 'DVD'/'VCD' menus
+- Changed 'File' menu to 'Source' menu and move 'DVD'/'VCD' to it
+- Use KProtocolManager::proxyForURL to determine if http_proxy should be set.
+  Copied some code from KProtocolManager::slaveProtocol for the exceptions.
+  MPlayer seems to only support http protocol proxies.
+- End fullscreen mode when movie ends when embedded
+- Zoom fix when embedded, 100% resets original movie size
+- Move config button to front, makes it accessable for very small movies
+- Also delay hiding of control buttons a bit
+Changes since version 0.7
+- Arts::Dispatcher -> KArtsDispatcher, fix multiple use crash
+Changes since version 0.6.5b
+- Zoom sub menu added in popup menu
+- Arts volume slider added in popup menu
+- Fullscreen mode for part (when embedded)
+- Small config button shows a popup menu now
+- Set environment variable http_proxy in mplayer's process when defined
+- Use LiveConnect for automatic resizing to movie size when embedded in khtml
+  fixes movie sizes at http://wwwa.accuweather.com, needs KDE-3.1 from cvs
+- Typo in application/x-mplayer2 mimetype
+Changes since version 0.6.5a
+- Remove -mpentium4 from admin/acinclude.m4.in (build fix)
+Changes since version 0.6.5
+- Changed regexp in wrong string fix
+Changes since version 0.6.4
+- Don't set a subtitle automatically
+- Put some basic install instructions in README
+- Get rid of the compiler warnings
+- Added ; at end of Patterns in mimetypes. Lets hope this fixes the mimetype
+  install
+- Changed regexp; mplayer rc3 changed "Start playing" to "Starting playback"
+- Fix uncheck of subtitle/language DVD menu
+Changes since version 0.6.3a
+- View Arts Control menu option (kdemultimedia)
+- disable screensaver in fullscreen mode
+- more user feedback; BrowserExtension::infoMessage for cache fill
+- start hiding buttons when the movie starts, not when mplayer is executed
+- do a lowercase match on HREF, fixes more on http://www.apple.com/switch/ads/
+Changes since version 0.6.3
+- compile fix for KDE-3.1 'kdDebug () << KURL' works only in HEAD
+Changes since version 0.6.2
+- Play HREF's if given, fixes movies at http://www.apple.com/trailers
+Changes since version 0.6.1
+- added auto hide buttons option
+- drop -alang and -slang in favor of -aid and -sid (fix duplicate languages)
+= synchronious killing of mplayer in KMPlayer's part dtor, fix possible crash
+- implemented some BrowserExtension functions,
+    loadingProgress, better progress feedback in konqueror of cache fill
+    save/restoreState, backward/forward works now in konqueror
+    setLocationBarURL when url changes in config dialog, updates locationbar
+- added video/x-ms-asf mimetype, now I can watch webtv from www.dsltv.nl :-)
+- sync config after each Ok/Apply
+- fix url argument (was broken by fix file argument)
+- fix crash, ConfigDialog already destoyed by view
+Changes since version 0.6
+- fix kmplayer file argument without path
+- fix some memory leaks
+- fix ratio settings when setting a new URL from the configure dialog
+- make loop non default (MPlayer bug workaround)
+- drop quoteURL, use KProcess:quote
+- add VCD menu
+- --enable-final fix
+- gcc-2.95.x compile fix
+Changes since version 0.5
+- Made colors of console output window darker
+- Fix for not restoring main window size
+- Don't have an useless toolbar
+- Make DVD menu optional
+- Make buttonbar optional
+- Add loop option
+- Config dialog added
+- Quick fix for File|Quit hang
+- Fix escaping bug
+- Make keep width/height ratio default
+Changes since version 0.4
+- Make small control buttons even smaller and flat
+- Play and Stop buttons are toggles
+- Try even harder to kill mplayer
+- Make console output window optional
+- More config options, eg. mplayer output patterns 
+  (use vi .kde/share/config/kmplayerrc for now)
+- Added an extra mimetype application/x-mplayer2 (how many are ther for wmf?)
+  I hope someone can tell me why these mimetypes doesn't show up in file
+  associatives.
+- a patch for mplayer x11 video driver, for those that don't have xv

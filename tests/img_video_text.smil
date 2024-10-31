@@ -1,0 +1,32 @@
+<smil>
+  <head>
+    <layout>
+      <root-layout width="640" height="240"/>
+      <region id="reg_img" >
+        <region id="reg_text1" left="10%" top="25%" right="60%" bottom="25%"/>
+        <region id="reg_vid" left="55%" top="5%" right="5%" bottom="60%"/>
+        <region id="reg_button1" left="446" top="202" width="130" height="26" z-index="2" background-color="LightGray"/>
+        <region id="reg_button2" left="446" top="202" width="132" height="28" z-index="1" background-color="DarkGray"/>
+        <region id="reg_text2" left="448" top="204" width="128" height="24" z-index="3"/>
+      </region>
+    </layout>
+  </head>
+  <body>
+    <par end="text2.activateEvent">
+      <img src="../icons/128-apps-kmplayer.png" region="reg_img" fit="fill" fill="freeze"/>
+      <text src="some_text.html" region="reg_text1" begin="3" dur="5">
+        <param name="charset" value="iso-8859-1"/>
+        <param name="fontFace" value="System"/>
+        <param name="fontColor" value="yellow"/>
+        <param name="fontSize" value="+1"/>
+        <param name="backgroundColor" value="blue"/>
+      </text>
+      <video src="file:///home/koos/doc/example.avi" id="video1" region="reg_vid" begin="3"/>
+      <text src="data:,Stop" id="text2" region="reg_text2" fill="freeze">
+        <param name="backgroundColor" value="gray"/>
+      </text>
+      <set targetElement="reg_button1" attributeName="background-color" to="DarkGray" begin="reg_text2.inBoundsEvent" end="reg_text2.outOfBoundsEvent"/>
+      <set targetElement="reg_button2" attributeName="background-color" to="LightGray" begin="reg_text2.inBoundsEvent" end="reg_text2.outOfBoundsEvent"/>
+    </par>
+  </body>
+</smil>

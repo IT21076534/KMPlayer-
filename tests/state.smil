@@ -1,0 +1,82 @@
+<smil xmlns="http://www.w3.org/ns/SMIL" version="3.0" baseProfile="Language">
+  <head>
+    <layout>
+      <root-layout width="400" height="200" backgroundColor="white"/>
+    </layout>
+    <state/>
+  </head>
+  <body>
+    <newvalue name="books"/>
+    <newvalue name="book" ref="books"/>
+    <newvalue name="title" ref="/data/books/book"
+              value="&quot;Tom Sawyer&quot;"/>
+    <newvalue name="author" ref="/data/books/book/title" where="after"
+              value="&quot;Mark Twain&quot;"/>
+    <newvalue name="book" ref="books"/>
+    <newvalue name="title" ref="/data/books/book[last()]"
+              value="&quot;Uncle Tom's Cabin&quot;"/>
+    <newvalue name="author" ref="/data/books/book[2]/title" where="after"
+              value="&quot;Harriet Beecher Stowe&quot;"/>
+    <newvalue name="book" ref="books"/>
+    <newvalue name="title" ref="/data/books/book[last()]"
+              value="&quot;Pygmalion&quot;"/>
+    <newvalue name="author" ref="//title[3]" where="after"
+              value="&quot;George Bernard Shaw&quot;"/>
+    <par dur="5">
+      <text src="data:,author%3A" left="10" top="10" width="100" height="20"/>
+      <text src="data:,title%3A" left="200" top="10" width="100" height="20"/>
+      <text src="data:,author%3A%20{/data/books/book[title = &quot;Tom Sawyer&quot;]/author}"
+            left="10" top="40" width="190" height="20"/>
+      <text src="data:,{//book/title[1]}"
+            left="200" top="40" width="190" height="20"/>
+      <text src="data:,{/data/books/book[title = &quot;Uncle Tom's Cabin&quot;]/author}"
+            left="10" top="70" width="190" height="20"/>
+      <text src="data:,{/data/books/book[position() = 2]/title}"
+            left="200" top="70" width="190" height="20"/>
+      <text src="data:,{//book[last()]/author}"
+            left="10" top="100" width="190" height="20"/>
+      <text src="data:,{/data/books/book/title[contains(., 'Pygma')]}"
+            left="200" top="100" width="190" height="20"/>
+      <text src="data:,books%20{number(/data/books/book)}"
+            left="10" top="160" width="300" height="20"/>
+    </par>
+    <newvalue name="@price" ref="/data/books/book[1]" value="10p"/>
+    <newvalue name="@foo" ref="/data/books/book[2]" value="fred"/>
+    <newvalue name="@bar" ref="/data/books/book[2]" value="barney"/>
+    <newvalue name="@price" ref="/data/books/book[3]" value="5&#36;"/>
+    <par dur="5">
+      <text src="data:,books%20with%20price%20{//book[@price]}" left="10" top="10" width="300" height="20"/>
+      <text src="data:,books%20with%20price%2010p%20{//book[@price=&quot;10p&quot;]/title}" left="10" top="40" width="300" height="20"/>
+      <text src="data:,price%20of%20{escape-uri(string-join(//book[3]/title | //book[3]/@price, ' is '))}" left="10" top="70" width="300" height="20"/>
+      <text src="data:,attributes%20on%20second%20book%20{//book[2]/@*}" left="10" top="100" width="300" height="20"/>
+      <text src="data:,total%20attributes%20on%20book%20{//book/@*}" left="10" top="130" width="300" height="20"/>
+      <text src="data:,second%20attribute%20on%20book%20{//book/@*[2]}" left="10" top="160" width="300" height="20"/>
+    </par>
+    <delvalue ref="//@foo"/>
+    <par dur="5">
+      <text src="data:,Title%20&quot;{/data/books/book[2]/title}&quot;"
+            left="10" top="10" width="300" height="20"/>
+      <text src="data:,Has%20{tokenize(/data/books/book[2]/title,&quot;\S+&quot;)}%20words"
+            left="10" top="40" width="300" height="20"/>
+      <text src="data:,First word%20is%20&quot;{tokenize(/data/books/book[2]/title,&quot;\S+&quot;)[1]}&quot;"
+            left="10" top="70" width="300" height="20"/>
+      <text src="data:,First two words%20are%20&quot;{string-join(subsequence(tokenize(/data/books/book[2]/title,&quot;\S+&quot;),1,2), ' ')}&quot;"
+            left="10" top="100" width="300" height="20"/>
+      <text src="data:,Words after second words%20are%20&quot;{string-join(subsequence(tokenize(/data/books/book[2]/title,&quot;\S+&quot;),3), ' ')}&quot;"
+            left="10" top="130" width="300" height="20"/>
+      <text src="data:,second%20attribute%20on%20book%20{//book/@*[2]}" left="10" top="160" width="300" height="20"/>
+    </par>
+    <par dur="5">
+      <text src="data:,Before%20&quot;Pygmalion&quot;%20are%20{descendant::book[child::title = &quot;Pygmalion&quot;]/preceding-sibling::*}%20books"
+            left="10" top="10" width="300" height="20"/>
+      <text src="data:,After%20&quot;Pygmalion&quot;%20are%20{descendant::book[child::title = &quot;Pygmalion&quot;]/following-sibling::*}%20books"
+            left="10" top="40" width="300" height="20"/>
+      <text src="data:,There%20are%20{count(//node())}%20nodes"
+            left="10" top="70" width="300" height="20"/>
+      <text src="data:,There%20are%20{count(//text())}%20text%20nodes"
+            left="10" top="100" width="300" height="20"/>
+    </par>
+    <delvalue ref="//books"/>
+  </body>
+</smil>
+

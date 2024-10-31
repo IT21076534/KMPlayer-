@@ -1,0 +1,109 @@
+<smil>
+  <head>
+    <layout>
+      <root-layout width="400" height="300"/>
+      <region id="reg1" left="5%" right="5%" top="5%" height="10%"/>
+      <region id="reg2" left="5%" right="5%" top="25%" height="10%"/>
+      <region id="reg3" left="5%" right="5%" top="45%" height="10%"/>
+      <region id="buttons" left="5%" right="5%" bottom="5%" height="10%"
+              background-color="gray">
+        <region id="but_rec" width="30%" />
+        <region id="but_dep" left="30%" width="30%" />
+        <region id="but_rep_seq" left="60%" width="20%" />
+        <region id="but_multi_trigger" left="80%" width="20%" />
+      </region>
+    </layout>
+  </head>
+  <body>
+    <par>
+      <a href="#rec">
+        <text id="rec_txt" src="data:,Recommended" region="but_rec"/>
+      </a>
+      <a href="#dep">
+        <text id="dep_txt" src="data:,Deprecated" region="but_dep"/>
+      </a>
+      <a href="#rep_seq">
+        <text id="rep_seq_txt" src="data:,Repeat" region="but_rep_seq"/>
+      </a>
+      <a href="#multi_trigger">
+        <text id="multi_trigger_txt" src="data:,Multi" region="but_multi_trigger"/>
+      </a>
+      <seq>
+        <par id="rec">
+          <text id="rtext1" src="data:,id=rtext1%20begin=2%20dur=2"
+                region="reg1" begin="2" dur="2"/>
+          <text src="data:,begin=rtext1.begin+1%20dur=2" region="reg2"
+                begin="rtext1.begin +1" dur="2"/>
+          <text src="data:,begin=rtext1.end%20dur=2" region="reg3"
+                begin="rtext1.end" dur="2"/>
+          <set target="rec_txt" attribute="background-color" to="green"
+               fill="freeze"/>
+          <set target="reg1" attribute="background-color" to="pink"
+               fill="freeze"/>
+          <set target="reg2" attribute="background-color" to="pink"
+               fill="freeze"/>
+          <set target="reg3" attribute="background-color" to="pink"
+               fill="freeze"/>
+        </par>
+        <par id="dep">
+          <text id="deptext1" src="data:,id=deptext1%20begin=2%20dur=2"
+                region="reg1" begin="2" dur="2"/>
+          <text src="data:,id(deptext1)(1)" region="reg2"
+                begin="id(deptext1)(1)" dur="2"/>
+          <set target="dep_txt" attribute="background-color" to="green"
+               fill="freeze"/>
+          <set target="reg1" attribute="background-color" to="red"
+               fill="freeze"/>
+          <set target="reg2" attribute="background-color" to="red"
+               fill="freeze"/>
+        </par>
+        <par id="rep_seq">
+          <text src="data:,%3Cseq%20repeat=3%3E" fontColor="LightGray"
+                region="reg1"/>
+          <set target="rep_seq_txt" attribute="background-color" to="green"/>
+          <set target="reg2" attribute="background-color" to="white"/>
+          <set target="reg3" attribute="background-color" to="white"/>
+          <seq repeat="3">
+            <set target="reg2" attribute="background-color" to="red" dur=".5"/>
+            <set target="reg3" attribute="background-color" to="blue" dur=".5"/>
+           </seq>
+        </par>
+        <par id="multi_trigger" dur="20">
+          <text id="multi_text" src="data:,begin=%224;start_text.activateEvent%22%2Cend=%228;end_text.activateEvent%22"
+                fontColor="LightGray" region="reg1"/>
+          <text id="start_text" src="data:,Start" background-color="green"
+                region="reg2"/>
+          <text id="end_text" src="data:,Stop" background-color="IndianRed"
+                region="reg3"/>
+          <set target="multi_trigger_txt" attribute="background-color" to="green"/>
+          <set target="multi_text" attribute="background-color" to="yellow"
+               begin="4;start_text.activateEvent"
+               end="8;end_text.activateEvent"/>
+        </par>
+      </seq>
+    </par>
+    <par>
+      <a href="#first">
+        <text id="rec_txt" src="data:,First" region="but_rec"/>
+      </a>
+      <a href="#second">
+        <text id="dep_txt" src="data:,Second" region="but_dep"/>
+      </a>
+      <a href="#third">
+        <text id="rep_seq_txt" src="data:,Third" region="but_rep_seq"/>
+      </a>
+      <seq>
+        <seq>
+          <set id="first" target="reg1" attribute="background-color" to="pink"
+               fill="freeze" dur="4"/>
+          <set id="second" target="reg2" attribute="background-color" to="pink"
+               fill="freeze" dur="4"/>
+          <set id="third" target="reg3" attribute="background-color" to="pink"
+               fill="freeze" dur="4"/>
+        </seq>
+         <set target="buttons" attribute="background-color" to="orange"
+              dur="2"/>
+      </seq>
+    </par>
+  </body>
+</smil>
